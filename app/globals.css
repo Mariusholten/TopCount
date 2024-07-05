@@ -2,31 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --background-color: #FFFEEE;
+  --text-color: #FA7070;
+  --contrast-color: #000000;
+}
 
 body{
   margin: 0;
   text-align: center;
-  background-color: #f4f1de;
+  background-color: var(--background-color);
+}
+
+h1 {
+  color: var(--text-color);
+  text-shadow: 2px 2px var(--contrast-color);
+  font-size: 72px;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--text-color);
+  text-shadow: 2px 2px var(--contrast-color);
+  font-size: 46px;
+}
+
+p {
+  margin: 1%;
+}
+
+
+.nav {
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.countNumber {
+  font-size: 80px;
+  color: var(--text-color);
+  text-shadow: 2px 2px var(--contrast-color);
+  margin-bottom: 100px;
+  margin-top: 100px;
+  font-weight: bold;
+}
+
+.ranking {
+  margin-top: 5%;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.footer {
+  text-align: center;
+  font-size: small;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
 
 .button-50 {
   appearance: button;
-  background-color: #3D405B;
+  background-color: var(--text-color);
   background-image: none;
-  border: 1px solid #3D405B;
+  border: 1px solid var(--contrast-color);
   border-radius: 4px;
-  box-shadow: #81B29A 4px 4px 0 0,#3D405B 4px 4px 0 1px;
+  box-shadow: var(--contrast-color) 4px 4px 0 0, var(--text-color) 4px 4px 0 1px;
   box-sizing: border-box;
-  color: #E07A5F;
+  color: var(--contrast-color);
   cursor: pointer;
   display: inline-block;
   font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: bold;
   line-height: 20px;
-  margin: 0 5px 10px 0;
+  margin: 0 0px 100px 0;
   overflow: visible;
-  padding: 12px 40px;
+  padding: 20px 60px;
   text-align: center;
   text-transform: none;
   touch-action: manipulation;
@@ -50,7 +107,7 @@ body{
 }
 
 .button-50:not([disabled]):active {
-  box-shadow: #81B29A 2px 2px 0 0, #3D405B 2px 2px 0 1px;
+  box-shadow: var(--contrast-color) 2px 2px 0 0, var(--contrast-color) 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
 
@@ -58,22 +115,4 @@ body{
   .button-50 {
     padding: 12px 50px;
   }
-}
-
-h1 {
-  color: #3D405B;
-  text-shadow: 2px 2px #E07A5F;
-  font-size: 72px;
-}
-
-.header {
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
-.countNumber {
-  font-size: 64px;
-  color: #3D405B;
-  text-shadow: 2px 2px #E07A5F;
-  margin-bottom: 10%;
 }

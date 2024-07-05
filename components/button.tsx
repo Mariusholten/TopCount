@@ -2,8 +2,10 @@
 import { insertEntry } from "@/app/api/dataFunctions";
 import { useState, useEffect } from "react";
 
-export default function button(){
+// Country images
+// https://gist.github.com/pratikbutani/20ded7151103bb30737e2ab1b336eb02
 
+export default function Button(){
     const [selectedCountry, setSelectedCountry] = useState('');
 
     useEffect(() => {
@@ -14,8 +16,12 @@ export default function button(){
         .then((data) => {
             const input = data.userSelectValue.label
             const country = input.substring(input.indexOf(" ") + 1);
-            console.log("Country: ", country)
-            setSelectedCountry(country);
+
+            if (!country) {
+                window.location.reload(); // Reload the page if country is empty
+            } else {
+                setSelectedCountry(country);
+            }
         });
     }, []);
 
@@ -23,16 +29,13 @@ export default function button(){
         await insertEntry(selectedCountry);
     }
 
-
     return (
         <button 
             className="button-50"
             role="button"
             onClick={updateNumber}
             >
-                CLICK
+                COUNT
         </button>
     )
 }
-
-

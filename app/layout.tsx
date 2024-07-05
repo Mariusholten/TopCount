@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Chakra_Petch } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const chakra_petch = Chakra_Petch({
   subsets: ["latin"],
@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={chakra_petch.className}>
         {children}
+        <Footer />  
         </body>
     </html>
   );

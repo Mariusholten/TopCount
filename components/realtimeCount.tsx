@@ -20,7 +20,6 @@ export default function RealtimeData(){
             schema: 'public',
             table: 'topcount'
         }, (payload) => {
-            console.log({payload})
             setNumber(payload.new.id)
         }).subscribe()
 
