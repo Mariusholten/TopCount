@@ -6,8 +6,10 @@ export default function Rankings(){
         <>
             <div className="header">
                 <h1>Rankings</h1>
-                <Link href="/"><p className="nav">HOME</p></Link>
+                <Link href="/"><p className="nav">Home</p></Link>
+                <Link href="/about"><p className="nav">About</p></Link>
             </div>
+            <p className="text">Current country clicks:</p>
             <Top10Comp />
         </>
     )

@@ -10,6 +10,7 @@ export default function Home() {
         <div className="header">
           <Header />
           <Link href="/rankings"><p className="nav">Rankings</p></Link>
+          <Link href="/about"><p className="nav">About</p></Link>
         </div>
         <RealtimeData />
         <Button />

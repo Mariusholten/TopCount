@@ -7,6 +7,7 @@ export default function footer(){
             <p>A global count with a ranking system based on clicks per country.</p>
             <Link href="/rankings">Rankings</Link>
             <Link href="/"> | Home</Link>
+            <Link href="/about"> | About</Link>
             <p>Made by Marius Holten.</p>
             <a href="https://github.com/Mariusholten">
                 {link}
