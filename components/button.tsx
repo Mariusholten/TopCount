@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 export default function Button(){
     const [selectedCountry, setSelectedCountry] = useState('');
-
+    const [disabled, setDisabled] = useState(false);
     useEffect(() => {
         fetch(
             `${process.env.NEXT_PUBLIC_COUNTRIES}`
@@ -27,12 +27,17 @@ export default function Button(){
 
     const updateNumber = async () => {
         await insertEntry(selectedCountry);
+        setDisabled(true);
+        setTimeout(() => {
+            setDisabled(false);
+          }, 100);
     }
 
     return (
         <button 
             className="button-50"
             role="button"
+            disabled={disabled}
             onClick={updateNumber}
             >
                 COUNT
