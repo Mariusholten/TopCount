@@ -30,7 +30,7 @@ export default function Button(){
         setDisabled(true);
         setTimeout(() => {
             setDisabled(false);
-          }, 100);
+          }, 150);
     }
 
     return (
