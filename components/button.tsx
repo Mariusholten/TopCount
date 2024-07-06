@@ -17,7 +17,7 @@ export default function Button(){
             const input = data.userSelectValue.label
             const country = input.substring(input.indexOf(" ") + 1);
 
-            if (!country) {
+            if (!country || country == "") {
                 setSelectedCountry('Unknown');
             } else {
                 setSelectedCountry(country);

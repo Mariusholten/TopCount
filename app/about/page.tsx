@@ -16,6 +16,8 @@ export default function About(){
                     <p>The only data that TopCount stores is the country from each click.</p>
                     <p> | </p>
                     <p>Source code for the project can be found in the footer.</p>
+                    <p> | </p>
+                    <p>Contact: contact@topcount.app</p>
             </div>
         </>
     )
