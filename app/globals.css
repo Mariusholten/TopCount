@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root{
   --background-color: #FFFEEE;
   --text-color: #FA7070;
-  --contrast-color: #000000;
+  --contrast-color: #121212;
+  --pColor: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --background-color: #1F1B24;
+    --text-color: #8E24AA;
+    --contrast-color: #F06292;
+    --pColor: #F5F5F5;
+  }
 }
 
 body{
@@ -29,6 +40,11 @@ h2 {
 
 p {
   margin: 1%;
+  color: var(--pColor);
+}
+
+a {
+  color: var(--pColor);
 }
 
 .text {
@@ -43,6 +59,7 @@ p {
 .nav {
   border-bottom: 1px solid black;
   display: inline-block;
+  border-color: var(--pColor);
 }
 
 .header {

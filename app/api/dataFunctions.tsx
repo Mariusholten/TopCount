@@ -1,3 +1,4 @@
+'use server';
 import supabase from "./supabase";
 
 export const fetchNumber = async () => {
@@ -8,7 +9,7 @@ export const fetchNumber = async () => {
     .limit(1)
     .single()
 
-    if(data) console.log("Number: ", data);
+    //if(data) console.log("Number: ", data);
     if(error) console.error("Fetch error: ", error);
 
     return data;
@@ -49,7 +50,7 @@ export const fetchCountries = async () => {
     .select('*')
     .order('total', { ascending: false})
 
-    if(data) console.log("Country ", data);
+    //if(data) console.log("Country: ", data);
     if(error) console.error("Fetch error: ", error);
 
     return data as Countries;
