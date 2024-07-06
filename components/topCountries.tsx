@@ -8,8 +8,13 @@ export default function TopComp(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetchCountries();
-            setData(response);
+            try {
+                const response = await fetchCountries();
+                setData(response); 
+            } catch (error) {
+                console.error('An error occurred fetching number:', error);
+                setData([{country: "N/A", total: 0,}]);
+            }
         };
 
         fetchData();

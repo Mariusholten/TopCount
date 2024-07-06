@@ -8,11 +8,16 @@ export default function RealtimeData(){
     
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetchNumber();
-            setNumber(data?.id);
+            try {
+                const data = await fetchNumber();
+                setNumber(data?.id);
+            } catch (error) {
+                console.error('An error occurred fetching number:', error);
+                setNumber(0);
+            }
         }
-
         fetchData()
+        
         const channel = supabase
         .channel('realtime data')
         .on('postgres_changes', {
