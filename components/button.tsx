@@ -18,7 +18,7 @@ export default function Button(){
             const country = input.substring(input.indexOf(" ") + 1);
 
             if (!country) {
-                window.location.reload(); // Reload the page if country is empty
+                setSelectedCountry('Unknown');
             } else {
                 setSelectedCountry(country);
             }
@@ -26,12 +26,15 @@ export default function Button(){
     }, []);
 
     const updateNumber = async () => {
-        await insertEntry(selectedCountry);
         setDisabled(true);
-        setTimeout(() => {
-            setDisabled(false);
-          }, 150);
-    }
+        await insertEntry(selectedCountry);
+        await delay(150);
+        setDisabled(false);
+    };
+      
+    const delay = (ms: number) => {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    };
 
     return (
         <button 
